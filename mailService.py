@@ -1,15 +1,18 @@
 import pika
 import json
+import sendMails
 class MailService():
 
     def __init__(self):
+        self.sender = sendMails.Sender()
         self.connection = None
         self.channel = None
         self.connect()
         self.consume()
 
     def callback(self,ch,method,properties,body):
-        print(json.loads(body)['emails'])
+        parameters = json.loads(body)
+        self.sender.sendMail(parameters['emails'],parameters['cc'],parameters['subject'],parameters['template'],parameters['values'])
 
     def consume(self):
         self.channel.start_consuming()

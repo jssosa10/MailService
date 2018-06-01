@@ -5,12 +5,10 @@ channel=connection.channel()
 channel.queue_declare(queue='Mailing')
 test = {
   "emails": [
-    "test@gmail.com",
-    "test2@gmail.com",
-    "test3@gmail.com"
+    "test@gmail.com"
   ],
   "cc":[
-    "test@gmail.com",
+    "test4@gmail.com",
     "test2@gmail.com",
     "test3@gmail.com"
   ],
