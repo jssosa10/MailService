@@ -1,8 +1,8 @@
 # MailService
- #Table of Contents
+# Table of Contents
 
 * [Uso](#Uso)
-
+* [Descripción](#Descripción)
 <a name="installation"></a>
 # Uso
 
@@ -22,3 +22,7 @@ source ./sendgrid.env
 
 - [SendGrid-Python](https://github.com/sendgrid/sendgrid-python)
 - [pika](https://github.com/pika/pika)
+
+# Descripción
+
+Servicio encargado de enviar un correo usando cierto parametros y editando un template HTML que sera el cuerpo del correo.
