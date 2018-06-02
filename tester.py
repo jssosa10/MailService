@@ -5,7 +5,7 @@ channel=connection.channel()
 channel.queue_declare(queue='Mailing')
 test = {
   "emails": [
-    "test@gmail.com"
+    "test1@gmail.com"
   ],
   "cc":[
     "test4@gmail.com",
@@ -14,10 +14,13 @@ test = {
   ],
   "subject": "the subject",
   "values": {
-    "var1": "value of var1",
-    "var2": "value of var2",
-    "var3": "value of var3"
+    "Name": "Juan",
+    "cc": "100000",
+    "lastname": "Sosa"
   },
-  "template": "name of templete (HTML)"
+  "template": "test"
 }
 channel.basic_publish(exchange='',routing_key='Mailing', body = json.dumps(test))
+print(test['values'].keys())
+for x in test['values'].keys():
+  print (x,test['values'][x])
